@@ -14,24 +14,6 @@ public class RobolectricTestRunner extends org.robolectric.RobolectricGradleTest
         super(testClass);
     }
 
-
-    @Override
-    protected AndroidManifest getAppManifest(Config config) {
-        config = new ForwardingConfig(config) {
-            @Override
-            public Class<?> constants() {
-                return BuildConfig.class;
-            }
-
-            @Override
-            public String packageName() {
-                return "arao.jatc";
-            }
-
-        };
-        return super.getAppManifest(config);
-    }
-
     @Override
     protected int pickSdkVersion(Config config, AndroidManifest appManifest) {
         int result = TEST_TARGET_SDK_VERSION;

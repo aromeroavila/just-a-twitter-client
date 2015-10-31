@@ -1,7 +1,5 @@
 package arao.jatc.view.ui;
 
-import android.support.annotation.LayoutRes;
-
 import arao.jatc.controller.activities.ActivityController;
 
 /**
@@ -9,5 +7,5 @@ import arao.jatc.controller.activities.ActivityController;
  */
 public interface SplashUi {
 
-    void initialize(@LayoutRes int layoutRes, ActivityController activityController);
+    void initialize(ActivityController activityController);
 }

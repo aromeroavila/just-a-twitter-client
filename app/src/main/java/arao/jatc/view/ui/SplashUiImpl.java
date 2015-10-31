@@ -1,13 +1,12 @@
 package arao.jatc.view.ui;
 
-import android.support.annotation.LayoutRes;
-
+import arao.jatc.R;
 import arao.jatc.controller.activities.ActivityController;
 
 public class SplashUiImpl implements SplashUi {
 
     @Override
-    public void initialize(@LayoutRes int layoutRes, ActivityController activityController) {
-        activityController.setContentView(layoutRes);
+    public void initialize(ActivityController activityController) {
+        activityController.setContentView(R.layout.splash_activity);
     }
 }

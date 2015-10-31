@@ -3,7 +3,6 @@ package arao.jatc.controller.activities;
 import android.app.Activity;
 import android.os.Bundle;
 
-import arao.jatc.R;
 import arao.jatc.view.ui.SplashUi;
 
 import static arao.jatc.view.ui.UiModule.splashUi;
@@ -25,6 +24,6 @@ public class SplashActivity extends Activity implements ActivityController {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mSplashUi.initialize(R.layout.splash_activity, this);
+        mSplashUi.initialize(this);
     }
 }

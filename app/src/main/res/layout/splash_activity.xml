@@ -45,15 +45,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/xxx_large"
-            android:background="@color/colorAccent"
+            android:background="@drawable/white_rounded_button"
             android:clickable="true"
             android:gravity="center"
             android:padding="@dimen/x_small"
             android:text="@string/splash_sign_up"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/text_medium" />
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/log_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small"
@@ -61,7 +63,8 @@
             android:clickable="true"
             android:text="@string/splash_log_in"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/text_medium" />
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

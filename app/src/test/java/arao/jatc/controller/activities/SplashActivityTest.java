@@ -1,5 +1,7 @@
 package arao.jatc.controller.activities;
 
+import android.content.Intent;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,6 +17,7 @@ import arao.jatc.view.ui.SplashUi;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.verify;
+import static org.robolectric.Shadows.shadowOf;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class)
@@ -44,5 +47,14 @@ public class SplashActivityTest {
         splashActivity = activityController.create().get();
 
         verify(splashUi).initialize(splashActivity);
+    }
+
+    @Test
+    public void testOnLoginButtonClicked() {
+        splashActivity.onLoginButtonClicked();
+
+        Intent nextStartedActivity = shadowOf(splashActivity).getNextStartedActivity();
+        assertThat(nextStartedActivity.getComponent().getClassName())
+                .isEqualTo(LoginActivity.class.getName());
     }
 }

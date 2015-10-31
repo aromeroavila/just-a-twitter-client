@@ -17,6 +17,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // TODO: remove when Robolectric gets updated so Shadows work without crashing
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {

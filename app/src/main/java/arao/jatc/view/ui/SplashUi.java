@@ -3,7 +3,7 @@ package arao.jatc.view.ui;
 import arao.jatc.controller.activities.SplashActivityController;
 
 /**
- * Ui element for the Splash Screen
+ * Ui component for the Splash Screen
  */
 public interface SplashUi {
 

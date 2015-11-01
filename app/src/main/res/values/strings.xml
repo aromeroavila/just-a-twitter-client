@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Just A Twitter Client</string>
 
+    <!-- Splash screen relative -->
     <string name="splash_welcome_message">Welcome to Just A Twitter Client.</string>
     <string name="splash_intro">Get real-time updates about what matters to you.</string>
     <string name="splash_sign_up">Sign up</string>
     <string name="splash_log_in">Log in</string>
+
+    <!-- Login screen relative -->
+    <string name="login_title">Log in to Twitter.</string>
+    <string name="login_username_field_hint">Phone, Email or Username</string>
+    <string name="login_password_field_hint">Password</string>
+    <string name="login_login_button">@string/splash_log_in</string>
 </resources>

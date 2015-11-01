@@ -9,4 +9,8 @@ public class UiModule {
     public static SplashUi splashUi() {
         return new SplashUiImpl();
     }
+
+    public static LoginUi loginUi() {
+        return new LoginUiImpl();
+    }
 }

@@ -5,7 +5,7 @@ import android.view.View;
 import arao.jatc.R;
 import arao.jatc.controller.activities.SplashActivityController;
 
-public class SplashUiImpl implements SplashUi, View.OnClickListener {
+class SplashUiImpl implements SplashUi, View.OnClickListener {
 
     private SplashActivityController mSplashActivityController;
 

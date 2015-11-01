@@ -27,7 +27,7 @@ public class SplashActivityTest {
     private SplashUi splashUi;
 
     private SplashActivity splashActivity;
-    private org.robolectric.util.ActivityController<SplashActivity> activityController;
+    private ActivityController<SplashActivity> activityController;
 
     @Before
     public void setUp() {
@@ -38,13 +38,13 @@ public class SplashActivityTest {
     }
 
     @Test
-    public void testActivityGetsLaunched() {
+    public void testActivityNotNull() {
         assertThat(splashActivity).isNotNull();
     }
 
     @Test
     public void testOnCreateInitsUi() {
-        splashActivity = activityController.create().get();
+        activityController.create().get();
 
         verify(splashUi).initialize(splashActivity);
     }

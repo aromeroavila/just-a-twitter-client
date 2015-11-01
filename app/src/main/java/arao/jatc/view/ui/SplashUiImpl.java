@@ -3,23 +3,25 @@ package arao.jatc.view.ui;
 import android.view.View;
 
 import arao.jatc.R;
-import arao.jatc.controller.activities.SplashActivityController;
+import arao.jatc.controller.activities.LoginController;
 
 class SplashUiImpl implements SplashUi, View.OnClickListener {
 
-    private SplashActivityController mSplashActivityController;
+    private LoginController mLoginController;
 
     @Override
-    public void initialize(SplashActivityController splashActivityController) {
-        mSplashActivityController = splashActivityController;
+    public void initialize(LoginController loginController) {
+        mLoginController = loginController;
 
-        splashActivityController.setContentView(R.layout.splash_activity);
-        View loginButton = splashActivityController.findViewById(R.id.log_in_button);
+        loginController.setContentView(R.layout.splash_activity);
+        View loginButton = loginController.findViewById(R.id.splash_login_button);
         loginButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        mSplashActivityController.onLoginButtonClicked();
+        if (v.getId() == R.id.splash_login_button) {
+            mLoginController.onLoginButtonClicked();
+        }
     }
 }

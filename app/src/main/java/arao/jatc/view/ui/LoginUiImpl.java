@@ -1,12 +1,27 @@
 package arao.jatc.view.ui;
 
-import arao.jatc.R;
-import arao.jatc.controller.activities.ActivityController;
+import android.view.View;
 
-class LoginUiImpl implements LoginUi {
+import arao.jatc.R;
+import arao.jatc.controller.activities.LoginController;
+
+class LoginUiImpl implements LoginUi, View.OnClickListener {
+
+    private LoginController mLoginController;
 
     @Override
-    public void initialize(ActivityController activityController) {
-        activityController.setContentView(R.layout.login_activity);
+    public void initialize(LoginController loginController) {
+        mLoginController = loginController;
+
+        loginController.setContentView(R.layout.login_activity);
+        View mLoginButton = loginController.findViewById(R.id.login_login_button);
+        mLoginButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.login_login_button) {
+            mLoginController.onLoginButtonClicked();
+        }
     }
 }

@@ -24,7 +24,7 @@ public class LoginActivityTest {
     private LoginUi loginUi;
 
     private LoginActivity loginActivity;
-    private org.robolectric.util.ActivityController<LoginActivity> activityController;
+    private ActivityController<LoginActivity> activityController;
 
     @Before
     public void setUp() {

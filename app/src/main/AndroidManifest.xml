@@ -24,7 +24,14 @@
         <activity
             android:name=".controller.activities.LoginActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".controller.activities.SplashActivity"
+            android:screenOrientation="portrait">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".controller.activities.SplashActivity" />
+        </activity>
 
     </application>
 

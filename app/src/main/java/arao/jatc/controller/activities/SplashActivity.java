@@ -8,7 +8,7 @@ import arao.jatc.view.ui.SplashUi;
 
 import static arao.jatc.view.ui.UiModule.splashUi;
 
-public class SplashActivity extends Activity implements SplashActivityController {
+public class SplashActivity extends Activity implements LoginController {
 
     private final SplashUi mSplashUi;
 

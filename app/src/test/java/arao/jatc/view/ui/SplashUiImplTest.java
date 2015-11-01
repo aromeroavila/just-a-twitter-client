@@ -12,8 +12,9 @@ import org.robolectric.annotation.Config;
 import arao.jatc.BuildConfig;
 import arao.jatc.R;
 import arao.jatc.RobolectricTestRunner;
-import arao.jatc.controller.activities.SplashActivityController;
+import arao.jatc.controller.activities.LoginController;
 
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.when;
 public class SplashUiImplTest {
 
     @Mock
-    private SplashActivityController splashActivityController;
+    private LoginController loginController;
 
     @Mock
     private View loginButton;
@@ -30,24 +31,35 @@ public class SplashUiImplTest {
     private SplashUiImpl splashUi;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
 
         splashUi = new SplashUiImpl();
-        when(splashActivityController.findViewById(R.id.log_in_button)).thenReturn(loginButton);
+        when(loginController.findViewById(R.id.splash_login_button)).thenReturn(loginButton);
 
-        splashUi.initialize(splashActivityController);
+        splashUi.initialize(loginController);
     }
 
     @Test
-    public void testInitialize() throws Exception {
-        verify(splashActivityController).setContentView(R.layout.splash_activity);
+    public void testInitialize() {
+        verify(loginController).setContentView(R.layout.splash_activity);
     }
 
     @Test
-    public void onClickLogInLaunchesActivity() {
+    public void testOnClickLoginButton() {
+        when(loginButton.getId()).thenReturn(R.id.splash_login_button);
+
         splashUi.onClick(loginButton);
 
-        verify(splashActivityController).onLoginButtonClicked();
+        verify(loginController).onLoginButtonClicked();
+    }
+
+    @Test
+    public void testOnClickRandomView() {
+        when(loginButton.getId()).thenReturn(123);
+
+        splashUi.onClick(loginButton);
+
+        verify(loginController, never()).onLoginButtonClicked();
     }
 }
